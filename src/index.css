@@ -1,0 +1,110 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --color-ink-950: #070a16;
+  --color-ink-900: #0b1020;
+  --color-ink-800: #121a33;
+  --color-ink-700: #1c2647;
+  --color-brand-violet: #8b5cf6;
+  --color-brand-cyan: #22d3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  @apply bg-ink-950 font-sans text-slate-300 antialiased;
+}
+
+::selection {
+  background: rgb(139 92 246 / 0.4);
+  color: white;
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(90deg, var(--color-brand-violet), var(--color-brand-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(135deg, var(--color-brand-violet), var(--color-brand-cyan));
+}
+
+@utility glass {
+  background-color: rgb(18 26 51 / 0.55);
+  border: 1px solid rgb(148 163 184 / 0.12);
+  backdrop-filter: blur(14px);
+}
+
+@utility band {
+  background-color: rgb(11 16 32 / 0.65);
+  border-block: 1px solid rgb(148 163 184 / 0.1);
+}
+
+@utility band-accent {
+  background-color: rgb(18 26 51 / 0.9);
+  border-block: 1px solid rgb(139 92 246 / 0.2);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise 0.8s ease both;
+}
+
+.animate-slide {
+  animation: slide-in 0.9s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .animate-rise,
+  .animate-slide {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+}
