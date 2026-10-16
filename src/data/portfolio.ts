@@ -171,6 +171,8 @@ export const courses: Course[] = [
     institution: 'Rocketseat',
     location: 'Online',
     hours: 90,
+    start: '11/2025',
+    end: '11/2025',
     description:
       'Trilha prática de React: componentes, hooks, roteamento, consumo de APIs e padrões modernos de front-end.',
     tags: ['React', 'Front-end'],

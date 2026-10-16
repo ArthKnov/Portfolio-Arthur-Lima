@@ -28,7 +28,10 @@ export default function Extension() {
               <Info label="Formato" value={c.location} />
               <Info label="Duração" value={`${c.hours} horas`} />
               {c.start && (
-                <Info label="Período" value={c.end ? `${c.start} – ${c.end}` : c.start} />
+                <Info
+                  label="Período"
+                  value={c.end && c.end !== c.start ? `${c.start} – ${c.end}` : c.start}
+                />
               )}
             </dl>
             <div className="mt-5 flex flex-wrap gap-2">
