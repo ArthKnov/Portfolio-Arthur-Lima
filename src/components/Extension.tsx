@@ -22,7 +22,7 @@ export default function Extension() {
                 {c.hours} horas
               </p>
             </div>
-            <p className="mt-4 max-w-2xl text-slate-400">{c.description}</p>
+            <p className="mt-4 max-w-2xl text-zinc-400">{c.description}</p>
             <dl className="mt-6 grid gap-4 sm:grid-cols-3">
               <Info label="Onde" value={c.institution} />
               <Info label="Formato" value={c.location} />

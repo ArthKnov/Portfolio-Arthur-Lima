@@ -30,13 +30,13 @@ export default function Contact() {
               <Icon />
             </span>
             <span className="min-w-0">
-              <span className="block text-xs uppercase tracking-[0.14em] text-slate-500">{label}</span>
+              <span className="block text-xs uppercase tracking-[0.14em] text-zinc-500">{label}</span>
               <span className="block truncate font-medium text-white group-hover:text-brand-cyan">{value}</span>
             </span>
           </a>
         ))}
       </div>
-      <p className="mt-6 inline-flex items-center gap-2 text-slate-400">
+      <p className="mt-6 inline-flex items-center gap-2 text-zinc-400">
         <MapPinIcon width={16} height={16} /> {profile.location}
       </p>
     </Section>

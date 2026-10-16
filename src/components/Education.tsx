@@ -24,14 +24,14 @@ export default function Education() {
                 <h3 className="font-display text-2xl font-bold text-white">{e.degree}</h3>
                 <span
                   className={`text-sm font-semibold ${
-                    i === 0 ? 'text-emerald-300' : 'text-slate-400'
+                    i === 0 ? 'text-white' : 'text-zinc-400'
                   }`}
                 >
                   {e.status}
                 </span>
               </div>
               <p className="mt-1 text-lg text-brand-cyan">{e.institution}</p>
-              <p className="mt-3 max-w-2xl text-slate-400">{e.description}</p>
+              <p className="mt-3 max-w-2xl text-zinc-400">{e.description}</p>
               <dl className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <Info label="Escola" value={e.institution} />
                 <Info label="Cidade" value={e.location} />

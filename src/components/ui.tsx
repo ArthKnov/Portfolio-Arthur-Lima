@@ -50,7 +50,7 @@ export function Section({
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
             {title}
           </h2>
-          {intro && <p className="mt-3 leading-relaxed text-slate-400">{intro}</p>}
+          {intro && <p className="mt-3 leading-relaxed text-zinc-400">{intro}</p>}
         </div>
         {children}
       </div>
@@ -60,7 +60,7 @@ export function Section({
 
 export function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-brand-violet/30 bg-brand-violet/10 px-3 py-1 text-xs font-medium text-violet-200">
+    <span className="inline-flex items-center rounded-full border border-brand-violet/30 bg-brand-violet/10 px-3 py-1 text-xs font-medium text-zinc-200">
       {children}
     </span>
   )
@@ -69,8 +69,8 @@ export function Tag({ children }: { children: ReactNode }) {
 export function Info({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <dt className="text-xs uppercase tracking-[0.14em] text-slate-500">{label}</dt>
-      <dd className="mt-1 font-medium text-slate-200">{value}</dd>
+      <dt className="text-xs uppercase tracking-[0.14em] text-zinc-500">{label}</dt>
+      <dd className="mt-1 font-medium text-zinc-200">{value}</dd>
     </div>
   )
 }

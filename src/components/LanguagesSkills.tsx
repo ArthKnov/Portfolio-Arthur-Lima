@@ -14,7 +14,7 @@ export default function LanguagesSkills() {
         {languages.map((l) => (
           <div key={l.name} className="glass rounded-2xl p-5 text-center">
             <p className="font-display text-2xl font-bold text-white">{l.name}</p>
-            <p className="mt-2 inline-block rounded-md bg-brand-cyan/15 px-2.5 py-1 text-sm font-semibold text-cyan-300">
+            <p className="mt-2 inline-block rounded-md bg-brand-cyan/15 px-2.5 py-1 text-sm font-semibold text-zinc-100">
               {l.level}
             </p>
           </div>
@@ -30,7 +30,7 @@ export default function LanguagesSkills() {
             }`}
           >
             <p className="text-sm font-bold uppercase tracking-[0.12em] text-brand-cyan">{s.group}</p>
-            <p className="leading-relaxed text-slate-200">{s.items.join('  ·  ')}</p>
+            <p className="leading-relaxed text-zinc-200">{s.items.join('  ·  ')}</p>
           </div>
         ))}
       </div>

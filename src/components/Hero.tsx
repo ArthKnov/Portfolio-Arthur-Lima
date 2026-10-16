@@ -29,9 +29,9 @@ export default function Hero() {
           <p className="animate-rise text-gradient mt-4 font-display text-xl font-semibold sm:text-2xl">
             {profile.role}
           </p>
-          <p className="animate-rise mt-2 text-slate-400">{profile.headline}</p>
+          <p className="animate-rise mt-2 text-zinc-400">{profile.headline}</p>
 
-          <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          <p className="animate-rise mt-6 max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg">
             {profile.summary}
           </p>
 
@@ -62,21 +62,21 @@ export default function Hero() {
 
           <dl className="animate-rise mt-10 grid gap-4 border-t border-white/10 pt-8 sm:grid-cols-3">
             <div>
-              <dt className="text-xs uppercase tracking-[0.14em] text-slate-500">Curso</dt>
+              <dt className="text-xs uppercase tracking-[0.14em] text-zinc-500">Curso</dt>
               <dd className="mt-1 font-medium text-white">DSM · 6º semestre</dd>
-              <dd className="text-sm text-slate-400">
+              <dd className="text-sm text-zinc-400">
                 {course.start.split(' ')[0]} → {course.end.split(' ')[0]}
               </dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-[0.14em] text-slate-500">Trabalho</dt>
+              <dt className="text-xs uppercase tracking-[0.14em] text-zinc-500">Trabalho</dt>
               <dd className="mt-1 font-medium text-white">{job.company}</dd>
-              <dd className="text-sm text-slate-400">desde {job.start}</dd>
+              <dd className="text-sm text-zinc-400">desde {job.start}</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-[0.14em] text-slate-500">Stack</dt>
+              <dt className="text-xs uppercase tracking-[0.14em] text-zinc-500">Stack</dt>
               <dd className="mt-1 font-medium text-white">Full stack</dd>
-              <dd className="text-sm text-slate-400">React · .NET · Node</dd>
+              <dd className="text-sm text-zinc-400">React · .NET · Node</dd>
             </div>
           </dl>
         </div>

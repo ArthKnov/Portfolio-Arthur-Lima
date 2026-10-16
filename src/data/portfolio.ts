@@ -217,6 +217,7 @@ export type Project = {
   period: string
   cover: string
   screenshots: { src: string; caption: string }[]
+  gallery?: 'app'
   description: string[]
   features: string[]
   techGroups: { group: string; items: string[] }[]
@@ -234,8 +235,14 @@ export const projects: Project[] = [
     subtitle: 'Reinserção de profissionais 60+ no mercado',
     semester: 'Semestre 1',
     period: '2024/1',
-    cover: img('senior-conecta.png'),
-    screenshots: [{ src: img('senior-conecta.png'), caption: 'Landing page do Sênior Conecta' }],
+    cover: img('senior-conecta-home.png'),
+    screenshots: [
+      { src: img('senior-conecta-home.png'), caption: 'Página inicial do Sênior Conecta' },
+      { src: img('senior-conecta-escolha.png'), caption: 'Escolha entre trabalhador e empresa' },
+      { src: img('senior-conecta-trabalhador.png'), caption: 'Área do trabalhador, com login e cadastro' },
+      { src: img('senior-conecta-empresa.png'), caption: 'Área da empresa' },
+      { src: img('senior-conecta-final.png'), caption: 'Convite final e contato' },
+    ],
     description: [
       'O Sênior Conecta é um projeto acadêmico voltado para a integração de profissionais aposentados (60+) no mercado de trabalho. O objetivo é conectar esses profissionais experientes com empresas que buscam conhecimento especializado, promovendo a reintegração sênior ao mundo corporativo.',
       'Nesta etapa foi desenvolvida a landing page web, com uma interface intuitiva e acessível que valoriza a experiência sênior e apresenta a proposta da plataforma para empresas e profissionais.',
@@ -260,8 +267,17 @@ export const projects: Project[] = [
     subtitle: 'Plataforma de agendamento de manicure',
     semester: 'Semestre 2',
     period: '2024/2',
-    cover: img('patty-nails.png'),
-    screenshots: [{ src: img('patty-nails.png'), caption: 'Página inicial da Patty Nails' }],
+    cover: img('patty-nails-home.png'),
+    screenshots: [
+      { src: img('patty-nails-home.png'), caption: 'Página inicial da Patty Nails' },
+      { src: img('patty-nails-mais-pedidos.png'), caption: 'Serviços mais pedidos' },
+      { src: img('patty-nails-sobre.png'), caption: 'Sobre a esmalteria' },
+      { src: img('patty-nails-depoimentos.png'), caption: 'Depoimentos de clientes' },
+      { src: img('patty-nails-bestsellers.png'), caption: 'Galeria bestsellers' },
+      { src: img('patty-nails-login-form.png'), caption: 'Login' },
+      { src: img('patty-nails-login.png'), caption: 'Cadastro de cliente' },
+      { src: img('patty-nails-esqueci.png'), caption: 'Recuperação de senha' },
+    ],
     description: [
       'A Patty Nails é uma aplicação web para facilitar o agendamento de sessões de manicure, voltada tanto para clientes que realizam seus agendamentos quanto para administradores que os gerenciam.',
       'O sistema oferece um gerenciamento de horários seguro e funcional: clientes agendam, visualizam e cancelam sessões, enquanto administradores têm controle total dos horários e agendamentos, com um sistema automático de alertas por e-mail.',
@@ -298,7 +314,14 @@ export const projects: Project[] = [
     semester: 'Semestre 3',
     period: '2025/1',
     cover: img('center-pet-web.png'),
-    screenshots: [{ src: img('center-pet-web.png'), caption: 'Página inicial do Center Pet Web' }],
+    screenshots: [
+      { src: img('center-pet-web.png'), caption: 'Página inicial do Center Pet Web' },
+      { src: img('center-pet-web-home.png'), caption: 'Destaque da home: Faça a Diferença' },
+      { src: img('center-pet-web-catalogo.png'), caption: 'Catálogo com pets especiais e mais pacientes' },
+      { src: img('center-pet-web-pet.png'), caption: 'Ficha do pet, com galeria e dados' },
+      { src: img('center-pet-web-login.jpg'), caption: 'Login de adotante e acesso para projetos' },
+      { src: img('center-pet-web-ong.png'), caption: 'Cadastro da organização' },
+    ],
     description: [
       'O Center Pet é uma plataforma que conecta ONGs de proteção animal a pessoas interessadas em adotar. As ONGs cadastram e gerenciam seus pets, e os adotantes navegam pelo catálogo, conhecem as ONGs e manifestam interesse na adoção.',
       'O projeto foi dividido em uma aplicação web em React e uma API REST em Node.js com MongoDB, que depois foi reaproveitada na versão mobile.',
@@ -340,7 +363,16 @@ export const projects: Project[] = [
     semester: 'Semestre 4',
     period: '2025/2',
     cover: img('swaply.png'),
-    screenshots: [{ src: img('swaply.png'), caption: 'Catálogo de cursos do Swaply' }],
+    screenshots: [
+      { src: img('swaply.png'), caption: 'Página inicial do Swaply' },
+      { src: img('swaply-catalogo.png'), caption: 'Catálogo dos cursos mais populares' },
+      { src: img('swaply-curso.png'), caption: 'Detalhe do curso, instrutor e conteúdo' },
+      { src: img('swaply-perfil.png'), caption: 'Perfil com créditos, habilidades e cursos' },
+      { src: img('swaply-novo-curso.png'), caption: 'Criação de um novo curso' },
+      { src: img('swaply-agenda.png'), caption: 'Agenda de aulas' },
+      { src: img('swaply-login.png'), caption: 'Login' },
+      { src: img('swaply-cadastro.png'), caption: 'Cadastro de conta' },
+    ],
     description: [
       'No Swaply você ensina e aprende no mesmo lugar: cada crédito vale uma hora de aula. Quem dá aula acumula créditos para gastar em outros cursos.',
       'Tem catálogo por categoria, agendamento (individual ou em grupo), avaliações e calendário. Front em React e API em Node.js, com Stripe, Zoom e Cloudinary.',
@@ -380,7 +412,14 @@ export const projects: Project[] = [
     semester: 'Semestre 5',
     period: '2026/1',
     cover: img('center-pet-mobile.png'),
-    screenshots: [{ src: img('center-pet-mobile.png'), caption: 'Tela inicial do Center Pet Mobile' }],
+    gallery: 'app',
+    screenshots: [
+      { src: img('center-pet-mobile.png'), caption: 'Tela inicial do Center Pet' },
+      { src: img('center-pet-mobile-home.png'), caption: 'Home com carrossel e pets disponíveis' },
+      { src: img('center-pet-mobile-catalogo.png'), caption: 'Catálogo com busca e filtros' },
+      { src: img('center-pet-mobile-pet.png'), caption: 'Ficha do pet James' },
+      { src: img('center-pet-mobile-login.png'), caption: 'Login, nova conta e cadastro de ONG' },
+    ],
     description: [
       'No 5º semestre levamos o Center Pet para o celular: app em React Native com Expo que consome a mesma API do semestre anterior, sem reinventar o backend.',
       'Pelo app dá para ver pets, ONGs em destaque e seguir com a adoção no Android e no iOS.',

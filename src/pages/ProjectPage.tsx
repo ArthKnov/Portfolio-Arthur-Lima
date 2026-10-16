@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { projects } from '../data/portfolio.ts'
 import { ArrowLeftIcon, ArrowRightIcon, ExternalIcon, GithubIcon } from '../components/Icons.tsx'
@@ -8,6 +8,10 @@ import { Tag } from '../components/ui.tsx'
 export default function ProjectPage() {
   const { slug } = useParams()
   const [lightbox, setLightbox] = useState<number | null>(null)
+
+  useEffect(() => {
+    setLightbox(null)
+  }, [slug])
 
   const index = projects.findIndex((p) => p.slug === slug)
   if (index === -1) return <Navigate to="/" replace />
@@ -21,13 +25,13 @@ export default function ProjectPage() {
       <Link
         to="/"
         state={{ scrollTo: 'projetos' }}
-        className="inline-flex items-center gap-2 text-sm text-slate-400 transition hover:text-white"
+        className="inline-flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
       >
         <ArrowLeftIcon width={16} height={16} /> Voltar aos works
       </Link>
 
       <header className="mt-6">
-        <span className="rounded-full bg-brand-violet/15 px-3 py-1 text-sm font-medium text-violet-200">
+        <span className="rounded-full bg-brand-violet/15 px-3 py-1 text-sm font-medium text-zinc-200">
           {project.semester} · {project.period}
         </span>
         <h1 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">{project.name}</h1>
@@ -59,7 +63,15 @@ export default function ProjectPage() {
       </header>
 
       <section className="mt-10">
-        <div className={`grid gap-4 ${project.screenshots.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+        <div
+          className={`grid gap-4 ${
+            project.gallery === 'app'
+              ? 'grid-cols-2 lg:grid-cols-3'
+              : project.screenshots.length > 1
+                ? 'sm:grid-cols-2'
+                : ''
+          }`}
+        >
           {project.screenshots.map((s, i) => (
             <button
               key={s.src}
@@ -70,9 +82,9 @@ export default function ProjectPage() {
               <img
                 src={s.src}
                 alt={s.caption}
-                className="max-h-[560px] w-full rounded-xl object-contain transition duration-500 group-hover:scale-[1.01]"
+                className="max-h-[560px] w-full rounded-xl object-contain object-top transition duration-500 group-hover:scale-[1.01]"
               />
-              <p className="px-2 pb-1 pt-3 text-sm text-slate-400">{s.caption} · clique para ampliar</p>
+              <p className="px-2 pb-1 pt-3 text-sm text-zinc-400">{s.caption} · clique para ampliar</p>
             </button>
           ))}
         </div>
@@ -83,14 +95,14 @@ export default function ProjectPage() {
           <section className="glass rounded-2xl p-6 sm:p-8">
             <h2 className="font-display text-2xl font-semibold text-white">O que é</h2>
             {project.description.map((d) => (
-              <p key={d} className="mt-4 leading-relaxed text-slate-400">
+              <p key={d} className="mt-4 leading-relaxed text-zinc-400">
                 {d}
               </p>
             ))}
             <h3 className="mt-8 font-display text-lg font-semibold text-white">O que o sistema faz</h3>
             <ul className="mt-4 space-y-2">
               {project.features.map((f) => (
-                <li key={f} className="flex gap-3 text-slate-300">
+                <li key={f} className="flex gap-3 text-zinc-300">
                   <span className="bg-gradient-brand mt-2 h-1.5 w-1.5 shrink-0 rounded-full" />
                   <span>{f}</span>
                 </li>
@@ -101,7 +113,7 @@ export default function ProjectPage() {
           <section className="glass rounded-2xl border-brand-violet/30 p-6 sm:p-8">
             <h2 className="font-display text-2xl font-semibold text-white">O que eu fiz</h2>
             {project.participation.map((p) => (
-              <p key={p} className="mt-4 leading-relaxed text-slate-400">
+              <p key={p} className="mt-4 leading-relaxed text-zinc-400">
                 {p}
               </p>
             ))}
@@ -125,7 +137,7 @@ export default function ProjectPage() {
                   <h3 className="text-xs font-semibold uppercase tracking-wider text-brand-cyan">{g.group}</h3>
                   <div className="mt-2 flex flex-wrap gap-2">
                     {g.items.map((i) => (
-                      <span key={i} className="rounded-lg bg-white/5 px-2.5 py-1 text-sm text-slate-200">
+                      <span key={i} className="rounded-lg bg-white/5 px-2.5 py-1 text-sm text-zinc-200">
                         {i}
                       </span>
                     ))}
@@ -140,7 +152,7 @@ export default function ProjectPage() {
       <nav className="mt-16 grid gap-4 border-t border-white/5 pt-8 sm:grid-cols-2">
         {prev ? (
           <Link to={`/projetos/${prev.slug}`} className="glass group rounded-2xl p-5 transition hover:border-brand-violet/40">
-            <span className="inline-flex items-center gap-2 text-sm text-slate-500">
+            <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
               <ArrowLeftIcon width={16} height={16} /> Case anterior
             </span>
             <p className="mt-1 font-display text-lg font-semibold text-white group-hover:text-brand-cyan">{prev.name}</p>
@@ -153,7 +165,7 @@ export default function ProjectPage() {
             to={`/projetos/${next.slug}`}
             className="glass group rounded-2xl p-5 text-right transition hover:border-brand-violet/40"
           >
-            <span className="inline-flex items-center gap-2 text-sm text-slate-500">
+            <span className="inline-flex items-center gap-2 text-sm text-zinc-500">
               Próximo case <ArrowRightIcon width={16} height={16} />
             </span>
             <p className="mt-1 font-display text-lg font-semibold text-white group-hover:text-brand-cyan">{next.name}</p>

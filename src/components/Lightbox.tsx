@@ -58,7 +58,7 @@ export default function Lightbox({ images, index, onChange }: Props) {
 
       <figure className="max-h-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
         <img src={image.src} alt={image.caption} className="max-h-[80vh] w-auto rounded-xl object-contain" />
-        <figcaption className="mt-3 text-center text-sm text-slate-400">
+        <figcaption className="mt-3 text-center text-sm text-zinc-400">
           {image.caption}
           {hasMany && ` (${index + 1}/${images.length})`}
         </figcaption>

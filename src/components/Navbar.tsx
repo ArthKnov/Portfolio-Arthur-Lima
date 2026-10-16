@@ -49,9 +49,11 @@ export default function Navbar() {
           className="flex items-center gap-2.5"
           aria-label="Ir para o início"
         >
-          <span className="bg-gradient-brand grid h-9 w-9 place-items-center rounded-lg font-display text-sm font-extrabold text-ink-950">
-            AL
-          </span>
+          <img
+            src={`${import.meta.env.BASE_URL}logo.png`}
+            alt=""
+            className="h-8 w-auto"
+          />
           <span className="hidden font-display text-sm font-bold text-white sm:block">
             Arthur Lima
           </span>
@@ -62,7 +64,7 @@ export default function Navbar() {
             <li key={l.id}>
               <button
                 onClick={() => goTo(l.id)}
-                className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+                className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-zinc-300 transition hover:bg-white/5 hover:text-white"
               >
                 {l.label}
               </button>
@@ -74,14 +76,14 @@ export default function Navbar() {
           href="https://github.com/ArthKnov"
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-brand-cyan/40 hover:text-white sm:inline-flex"
+          className="hidden rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-zinc-200 transition hover:border-brand-cyan/40 hover:text-white sm:inline-flex"
         >
           GitHub ↗
         </a>
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className="rounded-lg p-2 text-slate-200 lg:hidden"
+          className="rounded-lg p-2 text-zinc-200 lg:hidden"
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
         >
           {open ? <CloseIcon /> : <MenuIcon />}
@@ -94,7 +96,7 @@ export default function Navbar() {
             <li key={l.id}>
               <button
                 onClick={() => goTo(l.id)}
-                className="w-full rounded-xl px-3 py-3 text-left text-sm text-slate-200 hover:bg-white/5"
+                className="w-full rounded-xl px-3 py-3 text-left text-sm text-zinc-200 hover:bg-white/5"
               >
                 {l.label}
               </button>
